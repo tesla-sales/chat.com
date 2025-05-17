@@ -1,0 +1,200 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0; /* Default background, splash screen overrides */
+    overflow: hidden; /* Prevent scroll on main body */
+}
+
+.page {
+    width: 100%;
+    max-width: 400px; /* Limit width for larger screens */
+    height: 100vh; /* Full height for mobile */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: white; /* Default page background */
+}
+
+#splash-page {
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+}
+
+.hidden {
+    display: none !important;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+
+/* Chat Page Specific Styles */
+#chat-page {
+    justify-content: flex-start; /* Align items to the top */
+    padding: 0; /* Remove padding */
+    overflow: hidden; /* Hide scrollbar on the page div */
+}
+
+.chat-header {
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #eee;
+    font-size: 1.2em;
+    font-weight: bold;
+    position: sticky; /* Keep header visible */
+    top: 0;
+    z-index: 10;
+}
+
+.chat-messages {
+    flex-grow: 1; /* Take up remaining space */
+    width: 100%;
+    padding: 10px;
+    overflow-y: auto; /* Enable scrolling for messages */
+    display: flex;
+    flex-direction: column; /* Stack messages vertically */
+    gap: 10px; /* Space between messages */
+}
+
+.chat-input-container {
+    width: 100%;
+    padding: 10px;
+    border-top: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: sticky; /* Keep input at the bottom */
+    bottom: 0;
+    background-color: white;
+    box-sizing: border-box;
+}
+
+#message-input {
+    flex-grow: 1; /* Input takes available space */
+    margin-bottom: 0; /* Remove default input margin */
+}
+
+.send-button {
+    width: 40px; /* Fixed size for icon button */
+    height: 40px;
+    padding: 0;
+    display: flex; /* Center image */
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0; /* Prevent button from shrinking */
+    background: none; /* No background color */
+    border: none; /* No border */
+}
+
+.send-button img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.message-bubble {
+    max-width: 80%; /* Limit bubble width */
+    padding: 8px 12px;
+    border-radius: 15px;
+    word-wrap: break-word; /* Break long words */
+    margin-top: 4px; /* Space between username and bubble */
+}
+
+.message-bubble.outgoing {
+    background-color: #007bff;
+    color: white;
+    align-self: flex-end; /* Still align bubble within its container */
+}
+
+.message-bubble.incoming {
+    background-color: #f0f0f0; /* Milk white */
+    color: #333;
+    align-self: flex-start; /* Still align bubble within its container */
+}
+
+.message-container {
+    display: flex;
+    flex-direction: column; /* Stack username and bubble */
+    max-width: 80%; /* Limit container width */
+}
+
+.message-container.outgoing {
+    align-self: flex-end; /* Align container to the right */
+    margin-right: 10px; /* Space from edge */
+}
+
+.message-container.incoming {
+    align-self: flex-start; /* Align container to the left */
+    margin-left: 10px; /* Space from edge */
+}
+
+.username {
+    font-size: 0.75em;
+    color: #555;
+    margin-bottom: 2px; /* Space below username */
+    padding: 0 12px; /* Match horizontal padding of bubble */
+    word-wrap: break-word;
+}
+
+.message-container.outgoing .username {
+     align-self: flex-end; /* Align username to the right within outgoing container */
+}
+
+.message-container.incoming .username {
+    align-self: flex-start; /* Align username to the left within incoming container */
+}
+
+/* Ensure full height on mobile */
+@media (max-width: 768px) {
+    .page {
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+}

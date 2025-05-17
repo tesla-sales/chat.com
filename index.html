@@ -1,0 +1,51 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GG-Chat</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="importmap">
+        {
+            "imports": {
+                // No external libraries needed initially
+            }
+        }
+    </script>
+    <script type="module" src="script.js"></script>
+</head>
+<body>
+
+    <!-- Splash Screen -->
+    <div id="splash-page" class="page"></div>
+
+    <!-- Username Page -->
+    <div id="username-page" class="page hidden">
+        <h1>Choose a Username</h1>
+        <input type="text" id="username-input" placeholder="Enter username">
+        <button id="proceed-button" class="hidden">Proceed</button>
+        <p id="username-error" class="error-message"></p>
+    </div>
+
+    <!-- Password Page -->
+    <div id="password-page" class="page hidden">
+        <h1>Set a Password</h1>
+        <input type="password" id="password-input" placeholder="Enter password (max 6 chars)" maxlength="6">
+        <button id="get-started-button" class="hidden">Get Started</button>
+    </div>
+
+    <!-- Chat Page -->
+    <div id="chat-page" class="page hidden">
+        <div class="chat-header">GG-CHAT</div>
+        <div class="chat-messages" id="chat-messages">
+            <!-- Messages will be appended here -->
+        </div>
+        <div class="chat-input-container">
+            <input type="text" id="message-input" placeholder="Type a message...">
+            <button id="send-button" class="send-button hidden">
+                <img src="paper_airplane.png" alt="Send">
+            </button>
+        </div>
+    </div>
+
+</body>
+</html>
